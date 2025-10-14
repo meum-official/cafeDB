@@ -1,0 +1,32 @@
+{
+    "name": "10_cafedb",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview --open",
+        "prettier": "prettier --write .",
+        "prettier:check": "prettier --check ."
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/meum-official/cafeDB.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/meum-official/cafeDB/issues"
+    },
+    "homepage": "https://github.com/meum-official/cafeDB#readme",
+    "dependencies": {
+        "dayjs": "^1.11.18",
+        "papaparse": "^5.5.3"
+    },
+    "devDependencies": {
+        "prettier": "^3.6.2",
+        "vite": "^7.1.9"
+    }
+}

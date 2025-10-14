@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>카페지도</title>
+        <link rel="stylesheet" href="/src/ui.css" />
+    </head>
+    <body>
+        <div id="app">
+            <div id="map"></div>
+
+            <!-- 모바일 FAB -->
+            <button id="fabFilter" class="fab">필터</button>
+
+            <!-- 필터 패널 -->
+            <aside id="panel" class="panel">
+                <header class="panel-hd">
+                    <h1>☕ 카페지도</h1>
+                    <div class="grow"></div>
+                    <button id="btnReset" class="btn ghost">초기화</button>
+                    <button id="btnClose" class="btn icon">✕</button>
+                </header>
+
+                <div class="panel-body">
+                    <label class="row"><input type="checkbox" id="nearMe" /> 내 근처(2km)</label>
+                    <label class="row"
+                        ><input type="checkbox" id="inView" /> 보고있는 지도 근처</label
+                    >
+
+                    <h2>크기</h2>
+                    <div id="sizeChips" class="chips"></div>
+
+                    <h2>주차 <small>(무료만)</small></h2>
+                    <div id="parkingChips" class="chips"></div>
+                    <label class="row mt8"
+                        ><input type="checkbox" id="freeOnly" /> 무료 주차만</label
+                    >
+
+                    <h2>편의</h2>
+                    <div class="grid2">
+                        <label><input type="checkbox" id="wheel" /> 휠체어·유모차</label>
+                        <label><input type="checkbox" id="elev" /> 엘리베이터</label>
+                        <label><input type="checkbox" id="pet" /> 반려동물</label>
+                        <label><input type="checkbox" id="kids" /> 키즈</label>
+                        <label><input type="checkbox" id="wifi" /> 와이파이</label>
+                        <label><input type="checkbox" id="power" /> 콘센트</label>
+                    </div>
+
+                    <h2>테이블</h2>
+                    <div class="chips" id="shapeChips"></div>
+                    <div class="chips mt4" id="heightChips"></div>
+
+                    <h2>가격(₩)</h2>
+                    <div class="range">
+                        <input type="range" id="pMin" min="0" max="15000" step="500" value="0" />
+                        <input
+                            type="range"
+                            id="pMax"
+                            min="0"
+                            max="15000"
+                            step="500"
+                            value="15000"
+                        />
+                    </div>
+                    <div class="hint">
+                        ₩<span id="pMinLbl">0</span> ~ ₩<span id="pMaxLbl">15,000</span>
+                    </div>
+
+                    <label class="row mt8"
+                        ><input type="checkbox" id="dessert" /> 디저트 있음</label
+                    >
+
+                    <h2>화장실</h2>
+                    <div class="grid2">
+                        <select id="wcClean">
+                            <option value="">청결도(전체)</option>
+                            <option>매우청결</option>
+                            <option>청결</option>
+                            <option>보통</option>
+                            <option>구식</option>
+                            <option>더러움</option>
+                        </select>
+                        <select id="wcLoc">
+                            <option value="">위치(전체)</option>
+                            <option>실내</option>
+                            <option>야외</option>
+                        </select>
+                    </div>
+
+                    <label class="row mt8"
+                        ><input type="checkbox" id="openNow" /> 지금 영업중</label
+                    >
+                    <label class="row"
+                        ><input type="checkbox" id="updatedThisYear" /> 올해 업데이트</label
+                    >
+
+                    <button id="apply" class="btn primary w100 mt12">필터 적용</button>
+                    <div class="hint mt6" id="stats">0 / 0</div>
+                </div>
+            </aside>
+        </div>
+
+        <script type="module" src="/src/main.js"></script>
+    </body>
+</html>

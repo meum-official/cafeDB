@@ -1,0 +1,166 @@
+* {
+    box-sizing: border-box;
+}
+html,
+body,
+#app,
+#map {
+    height: 100%;
+    margin: 0;
+}
+#map {
+    position: fixed;
+    inset: 0;
+}
+.fab {
+    position: fixed;
+    right: 14px;
+    bottom: 18px;
+    z-index: 20;
+    padding: 10px 14px;
+    border-radius: 9999px;
+    background: #111;
+    color: #fff;
+    border: 1px solid #0001;
+    box-shadow: 0 8px 24px #0003;
+}
+.panel {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: -100%;
+    max-height: 70vh;
+    background: #fff;
+    border-radius: 16px 16px 0 0;
+    box-shadow: 0 -10px 32px #0003;
+    border: 1px solid #e5e7eb;
+    z-index: 30;
+    transition: bottom 0.25s ease;
+}
+.panel.open {
+    bottom: 0;
+}
+.panel-hd {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    padding: 10px 12px;
+    border-bottom: 1px solid #f0f0f0;
+}
+.panel-hd h1 {
+    margin: 0;
+    font-size: 16px;
+}
+.panel-body {
+    padding: 12px 14px 18px 14px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+.row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.grid2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+.mt4 {
+    margin-top: 4px;
+}
+.mt6 {
+    margin-top: 6px;
+}
+.mt8 {
+    margin-top: 8px;
+}
+.mt12 {
+    margin-top: 12px;
+}
+.w100 {
+    width: 100%;
+}
+.btn {
+    font-size: 12px;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 6px 10px;
+    background: #fff;
+    cursor: pointer;
+}
+.btn.primary {
+    background: #111;
+    color: #fff;
+    border-color: #111;
+}
+.btn.ghost {
+    background: #fff;
+}
+.btn.icon {
+    width: 30px;
+    height: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+.chips .chip {
+    padding: 6px 10px;
+    border: 1px solid #e5e7eb;
+    border-radius: 9999px;
+    background: linear-gradient(#fff, #fafafa);
+    font-size: 12px;
+    cursor: pointer;
+}
+.chips .chip.active {
+    background: #111;
+    color: #fff;
+    border-color: #111;
+}
+select {
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 6px 10px;
+    background: #fff;
+}
+input[type='checkbox'] {
+    accent-color: #111;
+}
+.range input[type='range'] {
+    appearance: none;
+    height: 4px;
+    background: #e5e7eb;
+    border-radius: 9999px;
+    width: 100%;
+}
+.range input[type='range']::-webkit-slider-thumb {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #111;
+    box-shadow: 0 2px 6px #0003;
+}
+.hint {
+    color: #6b7280;
+    font-size: 12px;
+}
+@media (min-width: 1024px) {
+    .panel {
+        left: 16px;
+        right: auto;
+        bottom: auto;
+        top: 16px;
+        max-height: 88vh;
+        width: 360px;
+        border-radius: 16px;
+    }
+    .fab {
+        display: none;
+    }
+}
