@@ -8,7 +8,6 @@ export async function fetchCafes() {
     const sheetId = import.meta.env.VITE_SHEET_ID;
     const tab = encodeURIComponent(import.meta.env.VITE_SHEET_TAB || 'cafe_db');
     const url = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:csv&sheet=${tab}`;
-
     const res = await fetch(url, { cache: 'no-store' });
     if (!res.ok) throw new Error('Sheet fetch failed');
     const csv = await res.text();

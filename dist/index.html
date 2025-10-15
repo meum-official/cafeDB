@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>카페지도</title>
+      <script type="module" crossorigin src="/assets/index-Do_hx_51.js"></script>
+      <link rel="stylesheet" crossorigin href="/assets/index-PyPuJ45e.css">
+    </head>
+    <body>
+        <div id="app">
+            <div id="map"></div>
+            <button id="btnSearchHere" class="search-here">이 지역에서 검색</button>
+
+            <!-- 모바일 FAB -->
+            <button id="fabFilter" class="fab">필터</button>
+
+            <!-- 필터 패널 -->
+            <aside id="panel" class="panel">
+                <header class="panel-hd">
+                    <h1>☕ 카페지도</h1>
+                    <div class="grow"></div>
+                    <button id="btnReset" class="btn ghost">초기화</button>
+                    <button id="btnClose" class="btn icon">✕</button>
+                </header>
+
+                <div class="panel-body">
+                    <h2>공간넓이</h2>
+                    <div id="sizeChips" class="chips"></div>
+
+                    <h2>주차</h2>
+                    <div id="parkingChips" class="chips"></div>
+                    <label class="row mt8"
+                        ><input type="checkbox" id="freeOnly" /> 무료 주차만</label
+                    >
+
+                    <h2>편의</h2>
+                    <div class="grid2">
+                        <label><input type="checkbox" id="wheel" /> 무턱(휠체어/유모차가능)</label>
+                        <label><input type="checkbox" id="elev" /> 엘리베이터</label>
+                        <label><input type="checkbox" id="pet" /> 반려동물</label>
+                        <label><input type="checkbox" id="kids" /> 키즈동반</label>
+                        <label><input type="checkbox" id="wifi" /> 와이파이</label>
+                        <label><input type="checkbox" id="power" /> 콘센트</label>
+                    </div>
+
+                    <h2>테이블</h2>
+                    <div class="chips" id="shapeChips"></div>
+                    <div class="chips mt4" id="heightChips"></div>
+
+                    <h2>가격(₩)</h2>
+                    <div class="range dual-range">
+                        <input class="range-min"
+                            type="range"
+                            id="priceMin"
+                            min="0"
+                            max="15000"
+                            step="500"
+                            value="0"
+                        />
+                        <input class="range-max"
+                            type="range"
+                            id="priceMax"
+                            min="0"
+                            max="15000"
+                            step="500"
+                            value="15000"
+                        />
+                    </div>
+                    <div class="hint">₩<span id="priceRangeLbl">0 ~ 15,000</span></div>
+
+                    <label class="row mt8"
+                        ><input type="checkbox" id="dessert" /> 디저트 있음</label
+                    >
+
+                    <h2>화장실</h2>
+                    <div class="grid2">
+                        <select id="wcClean">
+                            <option value="">청결도(전체)</option>
+                            <option>매우청결</option>
+                            <option>청결</option>
+                            <option>보통</option>
+                            <option>구식</option>
+                            <option>더러움</option>
+                        </select>
+                        <select id="wcLoc">
+                            <option value="">위치(전체)</option>
+                            <option>실내</option>
+                            <option>야외</option>
+                        </select>
+                    </div>
+
+                    <label class="row mt8"
+                        ><input type="checkbox" id="openNow" checked /> 지금 영업중</label
+                    >
+                    <label class="row"
+                        ><input type="checkbox" id="updatedThisYear" /> 올해 업데이트</label
+                    >
+
+                    <div class="hint mt6" id="stats">0 / 0</div>
+                </div>
+                <div class="panel-actions">
+                    <button id="btnShowAll" class="btn">모든 카페 보기</button>
+                    <button id="apply" class="btn primary">필터 적용</button>
+                </div>
+            </aside>
+        </div>
+
+        <!-- Cafe detail modal -->
+        <div id="modal" class="modal">
+            <div class="backdrop" id="modalBackdrop"></div>
+            <div class="sheet">
+                <button id="modalClose" class="close">×</button>
+                <div id="modalContent"></div>
+            </div>
+        </div>
+
+    </body>
+</html>

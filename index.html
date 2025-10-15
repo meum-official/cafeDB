@@ -9,6 +9,7 @@
     <body>
         <div id="app">
             <div id="map"></div>
+            <button id="btnSearchHere" class="search-here">이 지역에서 검색</button>
 
             <!-- 모바일 FAB -->
             <button id="fabFilter" class="fab">필터</button>
@@ -23,15 +24,10 @@
                 </header>
 
                 <div class="panel-body">
-                    <label class="row"><input type="checkbox" id="nearMe" /> 내 근처(2km)</label>
-                    <label class="row"
-                        ><input type="checkbox" id="inView" /> 보고있는 지도 근처</label
-                    >
-
-                    <h2>크기</h2>
+                    <h2>공간넓이</h2>
                     <div id="sizeChips" class="chips"></div>
 
-                    <h2>주차 <small>(무료만)</small></h2>
+                    <h2>주차</h2>
                     <div id="parkingChips" class="chips"></div>
                     <label class="row mt8"
                         ><input type="checkbox" id="freeOnly" /> 무료 주차만</label
@@ -39,10 +35,10 @@
 
                     <h2>편의</h2>
                     <div class="grid2">
-                        <label><input type="checkbox" id="wheel" /> 휠체어·유모차</label>
+                        <label><input type="checkbox" id="wheel" /> 무턱(휠체어/유모차가능)</label>
                         <label><input type="checkbox" id="elev" /> 엘리베이터</label>
                         <label><input type="checkbox" id="pet" /> 반려동물</label>
-                        <label><input type="checkbox" id="kids" /> 키즈</label>
+                        <label><input type="checkbox" id="kids" /> 키즈동반</label>
                         <label><input type="checkbox" id="wifi" /> 와이파이</label>
                         <label><input type="checkbox" id="power" /> 콘센트</label>
                     </div>
@@ -52,20 +48,25 @@
                     <div class="chips mt4" id="heightChips"></div>
 
                     <h2>가격(₩)</h2>
-                    <div class="range">
-                        <input type="range" id="pMin" min="0" max="15000" step="500" value="0" />
-                        <input
+                    <div class="range dual-range">
+                        <input class="range-min"
                             type="range"
-                            id="pMax"
+                            id="priceMin"
+                            min="0"
+                            max="15000"
+                            step="500"
+                            value="0"
+                        />
+                        <input class="range-max"
+                            type="range"
+                            id="priceMax"
                             min="0"
                             max="15000"
                             step="500"
                             value="15000"
                         />
                     </div>
-                    <div class="hint">
-                        ₩<span id="pMinLbl">0</span> ~ ₩<span id="pMaxLbl">15,000</span>
-                    </div>
+                    <div class="hint">₩<span id="priceRangeLbl">0 ~ 15,000</span></div>
 
                     <label class="row mt8"
                         ><input type="checkbox" id="dessert" /> 디저트 있음</label
@@ -89,16 +90,28 @@
                     </div>
 
                     <label class="row mt8"
-                        ><input type="checkbox" id="openNow" /> 지금 영업중</label
+                        ><input type="checkbox" id="openNow" checked /> 지금 영업중</label
                     >
                     <label class="row"
                         ><input type="checkbox" id="updatedThisYear" /> 올해 업데이트</label
                     >
 
-                    <button id="apply" class="btn primary w100 mt12">필터 적용</button>
                     <div class="hint mt6" id="stats">0 / 0</div>
                 </div>
+                <div class="panel-actions">
+                    <button id="btnShowAll" class="btn">모든 카페 보기</button>
+                    <button id="apply" class="btn primary">필터 적용</button>
+                </div>
             </aside>
+        </div>
+
+        <!-- Cafe detail modal -->
+        <div id="modal" class="modal">
+            <div class="backdrop" id="modalBackdrop"></div>
+            <div class="sheet">
+                <button id="modalClose" class="close">×</button>
+                <div id="modalContent"></div>
+            </div>
         </div>
 
         <script type="module" src="/src/main.js"></script>

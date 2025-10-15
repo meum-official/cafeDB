@@ -1,5 +1,13 @@
 export const SIZE_TAGS = ['초소형', '소형', '중형', '대형', '초대형'];
-export const PARKING_TAGS = ['무료', '유료', '조건부', '주차불가', '노상', '발렛'];
+export const PARKING_TAGS = [
+    '자체주차장',
+    '외부주차장',
+    '조건부주차장',
+    '주차불가',
+    '지하',
+    '무료',
+    '유료가능',
+];
 export const TABLE_SHAPES = ['네모', '원형', '비정형'];
 export const TABLE_HEIGHTS = ['낮은', '중간', '높은'];
 
